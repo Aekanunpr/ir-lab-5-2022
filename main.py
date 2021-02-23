@@ -1,6 +1,4 @@
 from fastapi import FastAPI, File, UploadFile
-from pythainlp.tokenize import word_tokenize
-import io
 app = FastAPI()
 
 
