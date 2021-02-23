@@ -9,4 +9,4 @@ def read_root():
 
 @app.get("/text/{text}")
 def read_word(text: str):
-    return {"word": text)}
+    return {"word": text}
