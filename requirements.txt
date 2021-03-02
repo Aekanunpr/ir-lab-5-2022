@@ -36,3 +36,5 @@ uvloop==0.14.0; sys_platform != "win32" and sys_platform != "cygwin" and platfor
 websockets==8.1
 botnoi
 oauth2client
+keras
+tensorflow
