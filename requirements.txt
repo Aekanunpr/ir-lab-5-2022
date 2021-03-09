@@ -38,3 +38,4 @@ botnoi
 oauth2client
 keras
 tensorflow
+h5py==2.10.0
