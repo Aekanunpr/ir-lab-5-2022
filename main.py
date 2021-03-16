@@ -26,8 +26,8 @@ async def image(image: UploadFile = File(...)):
     res = mod.predict([feat])[0]
     return {"class":res}
 
-@app.post("/imageurl")
-async def imgurl(url: str = Form(...)):
+@app.get("/imageurl")
+async def imgurl(url: str):
     #file#Image.open(image.file)
     r = requests.get(url, allow_redirects=True)
     with open("file2.png",'wb') as f:
@@ -37,7 +37,7 @@ async def imgurl(url: str = Form(...)):
     return {"class":res}
 
 
-@app.get("/text/{text}")
+@app.get("/text")
 def read_word(text: str):
     return {"word": text}
 
