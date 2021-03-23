@@ -27,14 +27,14 @@ async def image(image: UploadFile = File(...)):
     return {"class":res}
 
 @app.get("/imageurl")
-async def imgurl(url: str):
+async def imgurl(p_image_url: str):
     #file#Image.open(image.file)
-    r = requests.get(url, allow_redirects=True)
+    r = requests.get(p_image_url, allow_redirects=True)
     with open("file2.png",'wb') as f:
         f.write(r.content)
     feat = rn.extract_feature("file2.png")
     res = mod.predict([feat])[0]
-    return {"class":res}
+    return {"class":str(res)}
 
 
 @app.get("/text")
